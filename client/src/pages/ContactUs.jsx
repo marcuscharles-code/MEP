@@ -58,7 +58,7 @@ function ContactUs() {
             'service_juqc316',
             'template_6pzlxdf',
             e.target,
-            'GQCNGIzt19RO-YomF'
+            '7BSn0qMdkHOTDaMuF'
         )
             .then((result) => {
                 alert('Message Sent! We will get back to you shortly.');
