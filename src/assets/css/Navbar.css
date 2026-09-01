@@ -1,0 +1,120 @@
+.navbar {
+  background-color: rgba(102, 0, 102, 0.8);
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+
+.hero-list {
+  gap: 40px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.hero-list {
+  display: none;
+}
+
+.hero-list.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: rgba(102, 0, 102, 0.9);
+  width: 100%;
+  top: 60px;
+  left: 0;
+  padding: 1rem;
+}
+
+.hero-list a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 0;
+}
+
+.hero-list a.active {
+  font-weight: bold;
+}
+
+.hamburger {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger input {
+  display: none
+}
+
+.hamburger svg {
+  height: 2.5em;
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hamburger svg path {
+  fill: none;
+  stroke: #fff;
+  /* Stroke color for the SVG */
+  stroke-width: 3;
+  /* Stroke width */
+  stroke-linecap: round;
+  /* Rounded edges */
+  stroke-linejoin: round;
+  /* Rounded joins */
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hamburger svg path:first-child {
+  stroke-dasharray: 12 63;
+  /* Initial dash settings */
+}
+
+.hamburger input:checked+svg {
+  transform: rotate(-45deg);
+  /* Rotate on checked */
+}
+
+.hamburger input:checked+svg path:first-child {
+  stroke-dasharray: 20 300;
+  /* Adjust dash on checked */
+  stroke-dashoffset: -32.42;
+  /* Offset for checked */
+}
+
+@media (max-width: 768px) {
+  .hero-list {
+    flex-direction: column;
+    /* Column on mobile */
+    display: none;
+    /* Hide by default */
+  }
+
+  .hero-list.open {
+    display: flex;
+    /* Show when open */
+    gap: 10px;
+    /* Adjust spacing */
+  }
+
+  .hamburger {
+    display: flex;
+    /* Show hamburger on mobile */
+  }
+}

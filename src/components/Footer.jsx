@@ -10,18 +10,16 @@ export default function Footer() {
       <div className='footer-content'>
 
         <div className='footer-info'>
-          <a href='#'>
-            <img src={Logo2} alt='logo' width={50} />
-            <h4>Rick</h4>
+          <a className='hero-logo'>
+            <span>MEP</span>
           </a>
-          
+
           <div className='quick-links'>
             <h4><mark>Quick</mark> Links</h4>
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About</Link></li>
               <li><Link to="/service">Services</Link></li>
-              <li><Link to="/portfolio">Portfolio</Link></li>
               <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
@@ -34,37 +32,43 @@ export default function Footer() {
             <a href=''><FaYoutube size={18} /></a>
           </div>
         </div>
+
         <div className='footer-contact'>
           <h4><mark>Contact</mark> Us</h4>
           <p>
             <MdLocationOn />
             <span>
-              No. 3, Shell Location Road, Off Boskel Road, Km16, Ph-Aba Expressway, Port Harcourt</span>
+              Port Harcourt, Rivers State, Nigeria
+            </span>
           </p>
           <p>
             <MdOutlineCall />
-            <a href='tel:+2348105286284'>08105286284</a>
-            <a href='tel:+2347047074069'>07047074069</a>
+            <a href='tel:+2348000000000'>08000000000</a>
+            <a href='tel:+2348000000000'>08000000000</a>
           </p>
           <p>
             <MdMail />
-            <a href='mailto:info@rickinterservicesng.com'>info@rislng.com</a>
+            <a href='mailto:info@mepengineering.com'>info@mepengineering.com</a>
           </p>
         </div>
+
         <div className='footer-news'>
           <h4><mark>Subscribe</mark> Us</h4>
-          <p>Stay updated with our latest news. We promise not to spam!</p>
+          <p>Stay updated with our latest projects and engineering solutions.</p>
           <div>
             <input type='email' placeholder='Your Email' />
             <button><MdEdit /></button>
           </div>
         </div>
+
         <div>
           <a href="http://">Privacy Policy | Terms & Conditions</a>
         </div>
+
       </div>
+
       <div className='footer-copy'>
-        <p>&copy; Copyright: Rick Int&#39;l Services</p>
+        <p>&copy; Copyright: MEP Engineering</p>
       </div>
     </footer>
   );

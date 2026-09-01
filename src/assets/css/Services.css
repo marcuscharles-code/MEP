@@ -1,7 +1,7 @@
 .services {
   gap: 30px;
   padding: 50px 0;
-  background: url("../images/ourservicebg.webp") no-repeat 50% -20px / cover fixed;
+  background: url("../images/breadcumb-bg-1.jpg") no-repeat 50% -20px / cover fixed;
   position: relative;
 }
 

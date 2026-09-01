@@ -1,12 +1,54 @@
+.hero-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.hero-logo span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 1;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.hero-logo span::before {
+  content: '';
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
+.hero-logo span:hover {
+  transform: scale(1.05);
+}
+
+
+
 .hero {
-  height: 40dvh;
+  position: relative;
+  height: 80vh;
+  z-index: 1000;
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .home.hero {
   height: 70dvh;
 }
 
-.hero > img {
+.hero>img {
   inset: 0;
   width: 100%;
   height: 100%;
@@ -14,11 +56,18 @@
   position: absolute;
 }
 
-.hero > span {
+.hero>span {
   inset: 0;
   opacity: 0.5;
   position: absolute;
   background: #1a202e;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  pointer-events: none;
 }
 
 .hero .hero-nav {
@@ -40,7 +89,7 @@
   padding: 1rem;
   position: fixed;
   backdrop-filter: blur(10px);
-  background-color: #003366 ;
+  background-color: #003366;
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -50,7 +99,7 @@
   align-items: center;
 }
 
-.heroPage-logo{
+.heroPage-logo {
   width: 9rem;
   height: 9rem;
   margin: 0 auto 2rem;
@@ -58,7 +107,7 @@
   /* background: #000; */
 }
 
-.heroPage-logo img{
+.heroPage-logo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -80,7 +129,7 @@
   text-transform: uppercase;
 }
 
-.hero-nav .hero-overlay + .hero-list {
+.hero-nav .hero-overlay+.hero-list {
   inset: 0;
   width: 100%;
   height: 4rem;
@@ -121,11 +170,11 @@
   stroke-dasharray: 12 63;
 }
 
-.hero-list label input:checked + svg {
+.hero-list label input:checked+svg {
   transform: rotate(-45deg);
 }
 
-.hero-list label input:checked + svg path:first-child {
+.hero-list label input:checked+svg path:first-child {
   stroke-dasharray: 20 300;
   stroke-dashoffset: -32.42;
 }
@@ -180,7 +229,7 @@
 
 
 
-.hero-nav:has(div.hero-overlay) + .hero-text h2 {
+.hero-nav:has(div.hero-overlay)+.hero-text h2 {
   z-index: -1;
 }
 
@@ -203,7 +252,7 @@
   font-family: "Anton", sans-serif;
 }
 
-.hero-text .welcome-to{
+.hero-text .welcome-to {
   font-size: 2em;
   /* font-family: 'Montserrat', sans-serif; */
   color: var(--orange);
@@ -218,15 +267,15 @@
   /* line-height: 30px; */
   font-size: 1rem;
   /* letter-spacing: 0.5em; */
-  text-transform:initial
+  text-transform: initial
 }
 
-.hero-text div{
+.hero-text div {
   width: 70%;
   height: 1.5px;
- background: var(--orange);
- margin: 0 auto;
- margin-top: 30px;
+  background: var(--orange);
+  margin: 0 auto;
+  margin-top: 30px;
 }
 
 .home .hero-text p {
@@ -255,7 +304,7 @@
   padding: 60px 0;
   align-self: end;
   position: absolute;
-  background: #004080 ;
+  background: #004080;
 }
 
 
@@ -272,7 +321,7 @@
 .animated-icon video {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
   border-radius: 50%;
 }
 
@@ -304,27 +353,31 @@
   .hero {
     height: 55dvh;
   }
-  .heroPage-logo{
+
+  .heroPage-logo {
     width: 4rem;
     height: 4rem;
   }
-  .hero .hero-modal{
+
+  .hero .hero-modal {
     width: 90%;
-   
+
   }
+
   .hero-modal div {
     width: 80%;
   }
-  .about-section{
+
+  .about-section {
     margin-top: 50rem;
   }
-  
+
 }
 
 
 @media all and (min-width: 768px) {
   .hero {
-    height: 45dvh;
+    height: 70vh;
   }
 
   .home.hero {
@@ -339,7 +392,7 @@
     padding: 1.5rem 3rem;
   }
 
-  .hero-nav .hero-overlay + .hero-list {
+  .hero-nav .hero-overlay+.hero-list {
     padding: 0;
     height: inherit;
     position: relative;
@@ -397,13 +450,13 @@
 
   .hero-list label svg {
     display: none;
-}
+  }
 
   .hero-nav .hero-overlay ul {
     display: none;
   }
 
-  .hero-nav:has(div.hero-overlay) + .hero-text h2 {
+  .hero-nav:has(div.hero-overlay)+.hero-text h2 {
     z-index: 1;
   }
 
@@ -428,7 +481,7 @@
   .home .hero-text h3 {
     font-size: 5rem;
   }
- 
+
   .hero-text p {
     font-size: 1.5rem;
   }

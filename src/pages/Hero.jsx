@@ -1,14 +1,12 @@
 import '../assets/css/Hero.css';
 import PropTypes from 'prop-types';
 import Logo2 from '../assets/images/Logo2.png';
+import herobg from '../assets/images/hero-bg.jpg';
 import equip2 from '../assets/images/equip2.webp';
 import tools9 from '../assets/images/tools9.webp';
 import ourservicebg from '../assets/images/ourservicebg.webp';
 import equip1 from '../assets/images/equip1.webp';
 import counterimg from '../assets/images/counterimg.webp';
-import eyescan from '../assets/images/eyescan.mp4';
-import value from '../assets/images/value.mp4';
-import mission from '../assets/images/mission.mp4';
 import { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 
@@ -26,12 +24,10 @@ export default function Hero({ text }) {
         return tools9;
       case '/service':
         return ourservicebg;
-      case '/portfolio':
-        return equip1;
       case '/contact':
         return counterimg;
       default:
-        return equip2; // Default image for the Home page
+        return herobg; // Default image for the Home page
     }
   };
 
@@ -58,37 +54,13 @@ export default function Hero({ text }) {
     };
   }, [isOverlayVisible]);
 
-  const items = [
-    { icon: <video src={eyescan} autoPlay loop muted />, title: 'OUR VISION', text: 'To be a leading energy solutions provider, driving safer, smarter, and more sustainable oil & gas operations through cutting-edge technology and local expertise.' },
-    { icon: <video src={mission} autoPlay loop muted />, title: 'OUR MISSION', text: 'Delivering innovative, sustainable, and efficient oilfield solutions that enhance safety, reliability, and performance in the oil & gas industry.' },
-    { icon: <video src={value} autoPlay loop muted />, title: 'CORE VALUES', text: 'Innovation & Agility, Operational Excellence, Safety & Integrity, Sustainability, Collaboration' },
-  ];
 
   const lists = [
     { title: 'Home', url: '/' },
     { title: 'About', url: '/about' },
     { title: 'Services', url: '/service' },
-    { title: 'Portfolio', url: '/portfolio' },
     { title: 'Contact', url: '/contact' },
   ];
-
-
-  // useEffect(() => {
-  //   const options = {
-  //     strings: [
-  //       'Excellence in Wellhead & Oilfield Services',
-  //     ],
-  //     typeSpeed: 100,
-  //     backSpeed: 100,
-  //     loop: true,
-  //   };
-
-  //   const typed = new Typed(mottoRef.current, options);
-
-  //   return () => {
-  //     typed.destroy();
-  //   };
-  // }, []);
 
 
   const isHomeRoute = location.pathname === '/';
@@ -97,11 +69,14 @@ export default function Hero({ text }) {
     <>
       <section className={`hero ${isHomeRoute ? 'home' : ''}`}>
         <img src={getBackgroundImage()} alt='bg' />
+        <div className='hero-bg-overlay'></div>
         <span></span>
         <div className={`hero-nav ${isSticky ? 'sticky' : ''}`}>
           <Link className='hero-logo'>
-            <img src={Logo2} alt='logo' width={50} />
-            <h4>RICK</h4>
+            {/* <img src={Logo2} alt='logo' width={50} /> */}
+            <a className='hero-logo'>
+              <span>MEP</span>
+            </a>
           </Link>
           {isOverlayVisible && (
             <div className='hero-overlay' ref={overlayRef}>
@@ -134,36 +109,19 @@ export default function Hero({ text }) {
         </div>
         {isHomeRoute ? (
           <div className='hero-text'>
-            {/* <div className='heroPage-logo'>
-            <img src={Logo2} />
-          </div> */}
-            <h2>Rick INTERNATIONAL</h2>
+            <h2>MEP ENGINEERING</h2>
             <h3 className='welcome-to'>WELCOME TO</h3>
-            <h3>RICK INTERNATIONAL SERVICES LIMITED </h3>
+            <h3>MEP ENGINEERING, CONSTRUCTION & FACILITY SERVICES</h3>
 
             <div></div>
 
-            <p >Welcome to Rick International Services Limited</p>
-            {/* <p className='motto' ref={mottoRef}></p> */}
+            <p>Engineering Solutions. Built to Perform.</p>
           </div>
 
         ) : (
           <div className='hero-text'>
             <h3>{text}</h3>
             <p><Link to="/">Home</Link> /<span>{text}</span></p>
-          </div>
-        )}
-        {isHomeRoute && (
-          <div className='hero-modal'>
-            {items.map((item, index) => (
-              <div key={index}>
-                <div className='animated-icon'>
-                  {item.icon}
-                </div>
-                <p>{item.title}</p>
-                <span>{item.text}</span>
-              </div>
-            ))}
           </div>
         )}
       </section>

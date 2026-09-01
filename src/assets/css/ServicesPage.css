@@ -1,0 +1,224 @@
+.services-page {
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.services-page-heading {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.services-page-heading h1 {
+    font-family: Anton, sans-serif;
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    color: #1a202e;
+    font-weight: 400;
+}
+
+.services-page-heading h1 mark {
+    color: var(--orange);
+    background: none;
+}
+
+.services-page-heading p {
+    margin-top: 0.5rem;
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
+    color: gray;
+}
+
+/* ===== Desktop layout (list + detail) ===== */
+.services-page-layout {
+    display: none;
+}
+
+/* ===== List items ===== */
+.services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.services-list-item {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    padding: 1.1rem 1.25rem;
+    background: #f7f7f8;
+    border: none;
+    border-left: 3px solid transparent;
+    cursor: pointer;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #1a202e;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.services-list-item:hover {
+    background: #eee;
+}
+
+.services-list-item.active {
+    background: #1a202e;
+    border-left-color: var(--orange);
+    color: #fff;
+}
+
+/* ===== Detail panel ===== */
+.services-detail {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.services-detail-image {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+}
+
+.services-detail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.services-detail-content {
+    padding: 2rem;
+}
+
+.services-detail-content h2 {
+    font-family: Anton, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #1a202e;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.services-detail-content h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--orange);
+}
+
+.services-detail-content p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #444;
+    text-align: justify;
+}
+
+/* ===== Accordion (mobile) ===== */
+.services-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.accordion-item {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.accordion-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    background: #f7f7f8;
+    border: none;
+    border-left: 3px solid transparent;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a202e;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.accordion-trigger.open {
+    background: #1a202e;
+    color: #fff;
+    border-left-color: var(--orange);
+}
+
+.accordion-icon {
+    font-size: 1.3rem;
+    color: var(--orange);
+    line-height: 1;
+}
+
+.accordion-panel {
+    padding: 1.25rem;
+    background: #fff;
+}
+
+.accordion-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.accordion-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.accordion-panel p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #444;
+}
+
+/* ===== Breakpoints ===== */
+@media (min-width: 700px) {
+    .services-page {
+        padding: 3rem 2rem 5rem;
+    }
+
+    .services-page-layout {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 30px;
+        align-items: start;
+    }
+
+    .services-accordion {
+        display: none;
+    }
+
+    .services-detail-image {
+        height: 380px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .services-page-layout {
+        grid-template-columns: 320px 1fr;
+        gap: 40px;
+    }
+
+    .services-detail-image {
+        height: 420px;
+    }
+
+    .services-detail-content {
+        padding: 2.5rem 3rem;
+    }
+}

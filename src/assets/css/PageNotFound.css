@@ -1,0 +1,147 @@
+.page-not-found {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: var(--brand-green, #084236);
+    overflow: hidden;
+    position: relative;
+}
+
+.page-not-found::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border: 1px solid rgba(252, 159, 48, 0.2);
+    border-radius: 50%;
+    transform: translate(-40%, -20%);
+}
+
+.page-not-found::after {
+    content: '';
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    right: -100px;
+    bottom: -100px;
+}
+
+.error-content {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.error-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.error-logo span {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.error-logo span::before {
+    content: '';
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border: 2px solid var(--orange, #fc9f30);
+    border-radius: 50%;
+}
+
+.error-logo span {
+    z-index: 1;
+}
+
+.error-content h1 {
+    margin: 0;
+    color: var(--orange, #fc9f30);
+    font-size: clamp(6rem, 18vw, 11rem);
+    line-height: 0.9;
+    font-weight: 900;
+    letter-spacing: -5px;
+}
+
+.error-content h2 {
+    margin: 1rem 0;
+    color: #fff;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-weight: 800;
+}
+
+.error-content p {
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.home-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.8rem;
+    border-radius: 5px;
+    background: var(--orange, #fc9f30);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.home-btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+@media (max-width: 500px) {
+    .page-not-found {
+        padding: 1.5rem;
+    }
+
+    .error-logo span {
+        width: 65px;
+        height: 65px;
+        font-size: 1rem;
+    }
+
+    .error-logo span::before {
+        width: 47px;
+        height: 47px;
+    }
+
+    .error-content h1 {
+        letter-spacing: -3px;
+    }
+
+    .error-content p {
+        font-size: 0.9rem;
+    }
+
+    .home-btn {
+        width: 100%;
+        max-width: 220px;
+    }
+}

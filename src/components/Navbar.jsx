@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../assets/css/Navbar.css';
-import logo from '../assets/images/logo.png';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -14,8 +13,10 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="navbar-content">
-                <div className="logo1">
-                    <img src={logo} />
+                <div className="logo">
+                    <a className='hero-logo'>
+                        <span>MEP</span>
+                    </a>
                 </div>
                 <div>
                     <div className={`hero-list ${isOpen ? 'open' : ''}`}>
