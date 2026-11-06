@@ -1,10 +1,10 @@
 import { useState, useRef } from "react";
 import "../assets/css/ServicesPage.css";
-import weldhead from '../assets/images/weldhead.webp';
-import pipe from '../assets/images/pipe.webp';
-import equipment from '../assets/images/equipment.webp';
-import globalimg from '../assets/images/globalimg.webp';
-import technicalSupport from '../assets/images/technicalSupport.webp';
+import weldhead from '../assets/images/hvac.jpg';
+import pipe from '../assets/images/elect.jpg';
+import equipment from '../assets/images/plum.jpg';
+import globalimg from '../assets/images/elv.jpg';
+import technicalSupport from '../assets/images/fire.jpg';
 import manpower from '../assets/images/manpower.webp';
 
 const serviceList = [
